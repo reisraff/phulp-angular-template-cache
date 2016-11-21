@@ -1,13 +1,13 @@
-# phulp-angular-filesort
+# phulp-angular-template-cache
 
-The angular-filesort addon for [PHULP](https://github.com/reisraff/phulp).
+The angular-template-cache addon for [PHULP](https://github.com/reisraff/phulp).
 
-It's like [gulp-angular-filesort](https://github.com/klei/gulp-angular-filesort) with some modifications.
+It's like [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache) with some modifications.
 
 ## Install
 
 ```bash
-$ composer require reisraff/phulp-angular-filesort
+$ composer require reisraff/phulp-angular-template-cache
 ```
 
 ## Usage
@@ -15,11 +15,11 @@ $ composer require reisraff/phulp-angular-filesort
 ```php
 <?php
 
-use Phulp\AngularFileSort\AngularFileSort;
+use Phulp\AngularTemplateCache\AngularTemplateCache;
 
-$phulp->task('angular-filesort', function ($phulp) {
-    $phulp->src(['src/'], '/js$/')
-        ->pipe(new AngularFileSort);
+$phulp->task('angular-template-cache', function ($phulp) {
+    $phulp->src(['src/'], '/html$/')
+        ->pipe(new AngularTemplateCache('templateCacheHtml.js', ['module' => 'app', 'root' => 'app']))
 });
 
 ```
